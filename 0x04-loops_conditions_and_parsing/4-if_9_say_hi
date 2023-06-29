@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Say hie on the nineth loop
+
+z=1
+
+while [ $z -lt 11 ]
+do
+    echo "Best School"
+    if [ $z -eq 9 ]
+    then
+        echo "Hi"
+    fi
+    ((z++))
+done
