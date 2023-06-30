@@ -1,0 +1,1 @@
+meme signals ands process
