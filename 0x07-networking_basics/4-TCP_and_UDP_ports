@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Get the listening ports and associated PIDs
+listening_ports=$(netstat -tlnp 2>/dev/null | awk '/^tcp/ {print $4, $7}')
+
+# Print the header
+printf "%-20s %-10s %s\n" "PORT" "PID" "PROGRAM"
+printf "%-20s %-10s %s\n" "----" "---" "-------"
+
+# Process each listening port
+while read -r port pid; do
+    # Extract the program name
+    program=$(basename "$(readlink -f /proc/$pid/exe)")
+
+    # Print the port, PID, and program
+    printf "%-20s %-10s %s\n" "$port" "$pid" "$program"
+done <<< "$listening_ports"
+
