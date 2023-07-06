@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Get the IPv4 addresses
+ipv4_addresses=$(ip -4 addr show | grep inet | awk '{print $2}' | cut -d'/' -f1)
+
+# Print the header
+printf "%-20s\n" "IPv4 ADDRESS"
+printf "%-20s\n" "-------------"
+
+# Process each IPv4 address
+while read -r address; do
+    # Print the IP address
+    printf "%-20s\n" "$address"
+done <<< "$ipv4_addresses"
+

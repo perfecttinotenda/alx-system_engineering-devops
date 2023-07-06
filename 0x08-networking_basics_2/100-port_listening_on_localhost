@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# listen 2  port 98 on localhost on my mach8ne
+
+sudo nc -l localhost 98
