@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Using the ssh to connect to our server using the private key in file: 0-use_a_private_key
+# username: ubuntu
+
+ssh -i ~/.ssh/school ubuntu@45022f1091c2.f8a7cbbb.alx-cod.online
