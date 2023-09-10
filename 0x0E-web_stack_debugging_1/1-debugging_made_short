@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# remove the file if it exist
+
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
+rm /run/nginx.pid
